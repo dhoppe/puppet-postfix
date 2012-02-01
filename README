@@ -1,0 +1,25 @@
+# Class: postfix
+#   This module manages postfix
+#
+# Definition:
+#   postfix::aliases
+#   postfix::relayhost
+#
+# Parameters:
+#   $email - specify the email, default is root
+#   $host  - specify the relayhost, default is none
+#
+# Actions:
+#   Installs the aliases, mailname and main.cf
+#
+# Requires:
+#   -
+#
+# Sample Usage:
+#   postfix::aliases { "/etc/aliases":
+#      email => "admin@${::domain}",
+#   }
+#
+#   postfix::relayhost { "/etc/postfix/main.cf":
+#      host => "mail.${::domain}",
+#   }
