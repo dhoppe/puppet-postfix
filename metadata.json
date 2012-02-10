@@ -6,16 +6,22 @@
   "project_page": "http://github.com/dhoppe/puppet-postfix",
   "source": "git://github.com/dhoppe/puppet-postfix",
   "summary": "Postfix Module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "checksums": {
-    "Modulefile": "8509a22d8ef50956368a188bef0299ce",
-    "README": "4515ca164acd56de4a483695efe2167e",
-    "manifests/init.pp": "82dd80b6454afe69099f7365dede66e0",
+    "Modulefile": "9c042da24d99180e55b6ef7d1610e0f6",
+    "README": "46c5b6fd93c58212ef1e6411d2319efc",
+    "examples/postfix.yaml": "a9043278484c0a4251d1c70ae87cad26",
+    "manifests/init.pp": "8ad987f7ca5ca5c5b8d98ba0804837f8",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
     "templates/common/etc/aliases.erb": "3865daa2bd8104d9f9dd1d817f825543",
     "templates/common/etc/postfix/main.cf.erb": "d5833f9d8dd3651cb06e9bab7680bbdb",
     "tests/init.pp": "1dfb2eb3d2e04f3446c1eb98ef94ebc6"
   },
-  "dependencies": []
+  "dependencies": [
+    {
+      "name": "dhoppe/puppet",
+      "versionRequirement": "\u003e\u003d0.0.1"
+    }
+  ]
 }

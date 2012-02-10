@@ -39,7 +39,7 @@ class postfix {
 	}
 
 	postfix::aliases { "/etc/aliases":
-		email => "admin@${::domain}",
+		email => hiera('email'),
 	}
 
 	file { "/etc/mailname":
@@ -53,7 +53,7 @@ class postfix {
 	}
 
 	postfix::relayhost { "/etc/postfix/main.cf":
-		host => "mail.${::domain}",
+		host => hiera('host'),
 	}
 
 	package { [

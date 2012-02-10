@@ -17,9 +17,9 @@
 #
 # Sample Usage:
 #   postfix::aliases { "/etc/aliases":
-#      email => "admin@${::domain}",
+#      email => hiera('email'),
 #   }
 #
 #   postfix::relayhost { "/etc/postfix/main.cf":
-#      host => "mail.${::domain}",
+#      host => hiera('host'),
 #   }
