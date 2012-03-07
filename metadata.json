@@ -11,7 +11,7 @@
     "Modulefile": "fc3b3061158ed6d6ce070b70e8be0d4d",
     "README": "46c5b6fd93c58212ef1e6411d2319efc",
     "examples/postfix.yaml": "fdb4b0667fbb13a15624536fa0623eac",
-    "manifests/init.pp": "8ad987f7ca5ca5c5b8d98ba0804837f8",
+    "manifests/init.pp": "528e5a641e3bcfff7d68b4003084070d",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
     "templates/common/etc/aliases.erb": "3865daa2bd8104d9f9dd1d817f825543",

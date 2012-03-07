@@ -1,5 +1,5 @@
 class postfix {
-	define postfix::aliases ($email = false) {
+	define postfix::aliases($email = false) {
 		$t_email = $email ? {
 			false   => "root",
 			default => $email,
@@ -16,7 +16,7 @@ class postfix {
 		}
 	}
 
-	define postfix::relayhost ($host = false) {
+	define postfix::relayhost($host = false) {
 		$t_host = $host ? {
 			false   => "",
 			default => $host,
