@@ -64,7 +64,9 @@ class postfix {
 		ensure => absent,	
 	}
 
-	package { "postfix":
+	package { [
+		"postfix",
+		"swaks" ]:
 		ensure => present,
 	}
 
