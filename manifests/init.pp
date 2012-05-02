@@ -1,4 +1,7 @@
 class postfix {
+	validate_string(hiera('email'))
+	validate_string(hiera('host'))
+
 	define postfix::aliases($email = false) {
 		$t_email = $email ? {
 			false   => 'root',

@@ -1,5 +1,5 @@
 name 'dhoppe-postfix'
-version '0.0.6'
+version '0.0.7'
 
 author 'Dennis Hoppe'
 license 'GPLv2'
