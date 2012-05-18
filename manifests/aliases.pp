@@ -1,12 +1,7 @@
-define postfix::aliases($email = false) {
-  $t_email = $email ? {
-    false   => 'root',
-    default => $email,
-  }
-
+define postfix::aliases($email) {
   file { $name:
-    owner   => root,
-    group   => root,
+    owner   => 'root',
+    group   => 'root',
     mode    => '0644',
     alias   => 'aliases',
     content => template('postfix/common/etc/aliases.erb'),

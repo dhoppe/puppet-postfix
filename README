@@ -6,8 +6,8 @@
 #   postfix::relayhost
 #
 # Parameters:
-#   $email - specify the email, default is root
-#   $host  - specify the relayhost, default is none
+#   $email - specify the email
+#   $host  - specify the relayhost
 #
 # Actions:
 #   Installs the aliases, mailname and main.cf
@@ -16,10 +16,10 @@
 #   -
 #
 # Sample Usage:
-#   postfix::aliases { "/etc/aliases":
-#      email => hiera('email'),
+#   postfix::aliases { '/etc/aliases':
+#     email => $email,
 #   }
 #
-#   postfix::relayhost { "/etc/postfix/main.cf":
-#      host => hiera('host'),
+#   postfix::relayhost { '/etc/postfix/main.cf':
+#     host => $host,
 #   }

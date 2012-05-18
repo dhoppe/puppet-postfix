@@ -1,4 +1,8 @@
-class postfix {
+class postfix (
+  $email = $postfix::params::email,
+  $host  = $postfix::params::host
+) inherits postfix::params {
+
   validate_string(hiera('email'))
   validate_string(hiera('host'))
 
@@ -8,12 +12,12 @@ class postfix {
   }
 
   postfix::aliases { '/etc/aliases':
-    email => hiera('email'),
+    email => $email,
   }
 
   file { '/etc/mailname':
-    owner   => root,
-    group   => root,
+    owner   => 'root',
+    group   => 'root',
     mode    => '0644',
     alias   => 'mailname',
     content => "${::fqdn}\n",
@@ -22,7 +26,7 @@ class postfix {
   }
 
   postfix::relayhost { '/etc/postfix/main.cf':
-    host => hiera('host'),
+    host => $host,
   }
 
   package { [
