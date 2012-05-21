@@ -8,8 +8,10 @@
   "summary": "Postfix Module",
   "version": "0.0.9",
   "checksums": {
+    "Gemfile": "d5ce5c80f3c31e583507eb80b61b7400",
     "Modulefile": "52b508d46bd2d748e1da4de129e5d927",
     "README": "13f7dd408fe2d1cba0f3928d858d637d",
+    "Rakefile": "aac3a0179a3d0a7749c5dfc1384829e5",
     "examples/postfix.yaml": "fdb4b0667fbb13a15624536fa0623eac",
     "manifests/aliases.pp": "26582f6783b33a31734091f7917acd5b",
     "manifests/init.pp": "6a7c97cb544ec1a965b76390bc14a1cf",
