@@ -17,7 +17,7 @@
     "examples/postfix.yaml": "fdb4b0667fbb13a15624536fa0623eac",
     "manifests/aliases.pp": "26582f6783b33a31734091f7917acd5b",
     "manifests/init.pp": "6a7c97cb544ec1a965b76390bc14a1cf",
-    "manifests/params.pp": "83227b0b23115db59ef8d33ec4c63a34",
+    "manifests/params.pp": "aad994b5d77efceae4f2a22464009660",
     "manifests/relayhost.pp": "329c0c9e11dfee657bc5a92f8eaff22d",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
