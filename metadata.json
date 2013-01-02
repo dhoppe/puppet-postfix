@@ -19,7 +19,7 @@
     "manifests/config.pp": "d1b520ba49aeafefbb81e8432590fe89",
     "manifests/init.pp": "b2191efe2cb91bff0a94fe5e096ef0e2",
     "manifests/package.pp": "a90d72fa0d3dfe30dc470c890b7ac91e",
-    "manifests/params.pp": "d32355d1bbf0b6286b053f463f458c5a",
+    "manifests/params.pp": "895e64652e3e34913b06981a7929cb7d",
     "manifests/service.pp": "bbd520fb3adea010f36af292e41c4bb9",
     "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
     "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
