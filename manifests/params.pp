@@ -12,7 +12,7 @@
 #
 class postfix::params {
   case $::lsbdistcodename {
-    'squeeze', 'wheezy': {
+    'squeeze', 'wheezy', 'precise': {
       $ensure         = present
       $ensure_enable  = true
       $ensure_running = running
