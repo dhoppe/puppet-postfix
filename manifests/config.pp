@@ -23,6 +23,7 @@ class postfix::config (
     command     => '/usr/bin/newaliases',
     refreshonly => true,
     subscribe   => Mailalias['root'],
+    require     => Package['postfix'],
   }
 
   file {
