@@ -21,7 +21,9 @@ class postfix::package (
     'exim4-config',
     'exim4-daemon-light' ]:
       ensure => purged;
-    'postfix':
+    [
+    'postfix',
+    'swaks' ]:
       ensure => $ensure;
   }
 }
