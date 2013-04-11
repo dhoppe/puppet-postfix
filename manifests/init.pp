@@ -11,9 +11,11 @@
 # == Sample Usage:
 #
 class postfix {
-  class { 'package': }
-  class { 'config': }
-  class { 'service': }
+  anchor { 'postfix::begin': } ->
+  class { 'package': }         ->
+  class { 'config': }          ->
+  class { 'service': }         ->
+  anchor { 'postfix::end': }
 
   if defined('monit') {
     monit::file { 'postfix': }
