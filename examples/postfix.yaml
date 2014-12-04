@@ -1,0 +1,9 @@
+---
+postfix::config_file_template: "postfix/%{::operatingsystem}/etc/postfix/main.cf.erb"
+postfix::config_file_hash:
+  'mailname':
+    config_file_path:   '/etc/mailname'
+    config_file_mode:   '0644'
+    config_file_string: "%{::fqdn}"
+postfix::recipient: "admin@%{::domain}"
+postfix::relayhost: "smtp.%{::domain}"
