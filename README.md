@@ -54,8 +54,7 @@ Install postfix with the recommended parameters.
       config_file_hash     => {
         'mailname' => {
           config_file_path   => '/etc/mailname',
-          config_file_mode   => '0644',
-          config_file_string => "${::fqdn}",
+          config_file_string => "${::fqdn}\n",
         },
       },
     }
