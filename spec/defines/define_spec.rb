@@ -12,6 +12,7 @@ describe 'postfix::define', :type => :define do
     context "on #{osfamily}" do
       context 'when source file' do
         let(:params) {{
+          :config_file_path   => '/etc/postfix/main.2nd.cf',
           :config_file_source => 'puppet:///modules/postfix/Debian/etc/postfix/main.cf',
         }}
 
@@ -27,6 +28,7 @@ describe 'postfix::define', :type => :define do
 
       context 'when content string' do
         let(:params) {{
+          :config_file_path   => '/etc/postfix/main.3rd.cf',
           :config_file_string => '# THIS FILE IS MANAGED BY PUPPET',
         }}
 
@@ -42,6 +44,7 @@ describe 'postfix::define', :type => :define do
 
       context 'when content template' do
         let(:params) {{
+          :config_file_path     => '/etc/postfix/main.4th.cf',
           :config_file_template => 'postfix/Debian/etc/postfix/main.cf.erb',
         }}
 
@@ -57,6 +60,7 @@ describe 'postfix::define', :type => :define do
 
       context 'when content template (custom)' do
         let(:params) {{
+          :config_file_path         => '/etc/postfix/main.5th.cf',
           :config_file_template     => 'postfix/Debian/etc/postfix/main.cf.erb',
           :config_file_options_hash => {
             'key' => 'value',
