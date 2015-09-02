@@ -275,6 +275,14 @@ Determines the name of service to manage. Defaults to 'postfix'.
 
 Determines if the service should be enabled at boot. Valid values are 'true' and 'false'. Defaults to 'true'.
 
+#### `myhostname`
+
+Determines the internet domain name of this mail system. Defaults to "$::fqdn".
+
+#### `mydestination`
+
+Determines the list of domains that are delivered via the $local_transport mail delivery transport. Defaults to "${::fqdn}, localhost.${::domain}, localhost".
+
 #### `recipient`
 
 Determines which email address should be used for the redirecting. Defaults to "admin@${::domain}".
