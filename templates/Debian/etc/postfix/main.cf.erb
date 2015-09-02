@@ -32,11 +32,11 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 # See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
 # information on enabling SSL in the smtp client.
 
-myhostname = <%= scope.lookupvar('::fqdn') %>
+myhostname = <%= scope.lookupvar('::postfix::myhostname') %>
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
-mydestination = <%= scope.lookupvar('::fqdn') %>, localhost.<%= scope.lookupvar('::domain') %>, localhost
+mydestination = <%= scope.lookupvar('::postfix::mydestination') %>
 relayhost = <%= scope.lookupvar('::postfix::relayhost') %>
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
 mailbox_command = procmail -a "$EXTENSION"
