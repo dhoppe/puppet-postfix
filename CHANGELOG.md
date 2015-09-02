@@ -1,3 +1,7 @@
+## 2015-09-02 Release 1.0.6
+### Summary:
+- [Fix] Forgot to merge the feature branch
+
 ## 2015-09-02 Release 1.0.5
 ### Summary:
 - [Puppet] Allow the parameters myhostname, mydestination to be configured
