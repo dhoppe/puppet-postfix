@@ -1,3 +1,7 @@
+## 2015-09-02 Release 1.0.5
+### Summary:
+- [Puppet] Allow the parameters myhostname, mydestination to be configured
+
 ## 2015-08-13 Release 1.0.4
 ### Summary:
 - [Beaker] Update Beaker environment
@@ -8,7 +12,7 @@
 ## 2015-02-25 Release 1.0.3
 ### Summary:
 - [Beaker] Update Beaker environment
-- - [Travis CI] Update Travis CI environment
+- [Travis CI] Update Travis CI environment
 
 ## 2015-02-25 Release 1.0.2
 ### Summary:
