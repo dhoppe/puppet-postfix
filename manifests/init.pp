@@ -28,6 +28,8 @@ class postfix (
   $service_name             = $::postfix::params::service_name,
   $service_enable           = true,
 
+  $myhostname               = $::fqdn,
+  $mydestination            = "${::fqdn}, localhost.${::domain}, localhost",
   $recipient                = "admin@${::domain}",
   $relayhost                = "smtp.${::domain}",
 ) inherits ::postfix::params {
