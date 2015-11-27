@@ -1,3 +1,7 @@
+## 2015-11-27 Release 1.0.7
+### Summary:
+- [Puppet] Add support for Gentoo
+
 ## 2015-09-02 Release 1.0.6
 ### Summary:
 - [Fix] Forgot to merge the feature branch
