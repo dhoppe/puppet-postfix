@@ -19,9 +19,9 @@ describe 'postfix', :type => :class do
       describe 'postfix::install' do
         context 'defaults' do
           it do
-            is_expected.to contain_package('postfix').with({
+            is_expected.to contain_package('postfix').with(
               'ensure' => 'present',
-            })
+            )
           end
         end
 
@@ -31,9 +31,9 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('postfix').with({
+            is_expected.to contain_package('postfix').with(
               'ensure' => 'latest',
-            })
+            )
           end
         end
 
@@ -45,22 +45,22 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('postfix').with({
+            is_expected.to contain_package('postfix').with(
               'ensure' => 'absent',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
           it do
-            is_expected.to contain_service('postfix').with({
+            is_expected.to contain_service('postfix').with(
               'ensure' => 'stopped',
               'enable' => false,
-            })
+            )
           end
         end
 
@@ -72,22 +72,22 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_package('postfix').with({
+            is_expected.to contain_package('postfix').with(
               'ensure' => 'purged',
-            })
+            )
           end
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'absent',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
           it do
-            is_expected.to contain_service('postfix').with({
+            is_expected.to contain_service('postfix').with(
               'ensure' => 'stopped',
               'enable' => false,
-            })
+            )
           end
         end
       end
@@ -95,11 +95,11 @@ describe 'postfix', :type => :class do
       describe 'postfix::config' do
         context 'defaults' do
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -109,7 +109,7 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.dir').with({
+            is_expected.to contain_file('postfix.dir').with(
               'ensure'  => 'directory',
               'force'   => false,
               'purge'   => false,
@@ -117,7 +117,7 @@ describe 'postfix', :type => :class do
               'source'  => 'puppet:///modules/postfix/Debian/etc/postfix',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -128,7 +128,7 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.dir').with({
+            is_expected.to contain_file('postfix.dir').with(
               'ensure'  => 'directory',
               'force'   => true,
               'purge'   => true,
@@ -136,7 +136,7 @@ describe 'postfix', :type => :class do
               'source'  => 'puppet:///modules/postfix/Debian/etc/postfix',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -146,12 +146,12 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'source'  => 'puppet:///modules/postfix/Debian/etc/postfix/main.cf',
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -161,12 +161,12 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -176,12 +176,12 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
 
@@ -194,12 +194,12 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_file('postfix.conf').with({
+            is_expected.to contain_file('postfix.conf').with(
               'ensure'  => 'present',
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
-            })
+            )
           end
         end
       end
@@ -207,10 +207,10 @@ describe 'postfix', :type => :class do
       describe 'postfix::service' do
         context 'defaults' do
           it do
-            is_expected.to contain_service('postfix').with({
+            is_expected.to contain_service('postfix').with(
               'ensure' => 'running',
               'enable' => true,
-            })
+            )
           end
         end
 
@@ -220,10 +220,10 @@ describe 'postfix', :type => :class do
           }}
 
           it do
-            is_expected.to contain_service('postfix').with({
+            is_expected.to contain_service('postfix').with(
               'ensure' => 'stopped',
               'enable' => true,
-            })
+            )
           end
         end
       end

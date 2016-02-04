@@ -3,7 +3,6 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'postfix'
-  config_dir_path  = '/etc/postfix'
   config_file_path = '/etc/postfix/main.cf'
   service_name     = 'postfix'
 end
