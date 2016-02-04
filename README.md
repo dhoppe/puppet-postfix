@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-postfix.png?branch=master)](https://travis-ci.org/dhoppe/puppet-postfix)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
+[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
+[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
 
 #### Table of Contents
 
