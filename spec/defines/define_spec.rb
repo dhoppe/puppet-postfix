@@ -17,12 +17,12 @@ describe 'postfix::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_main.cf').with({
+          is_expected.to contain_file('define_main.cf').with(
             'ensure'  => 'present',
             'source'  => 'puppet:///modules/postfix/Debian/etc/postfix/main.cf',
             'notify'  => 'Service[postfix]',
             'require' => 'Package[postfix]',
-          })
+          )
         end
       end
 
@@ -33,12 +33,12 @@ describe 'postfix::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_main.cf').with({
+          is_expected.to contain_file('define_main.cf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[postfix]',
             'require' => 'Package[postfix]',
-          })
+          )
         end
       end
 
@@ -49,12 +49,12 @@ describe 'postfix::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_main.cf').with({
+          is_expected.to contain_file('define_main.cf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[postfix]',
             'require' => 'Package[postfix]',
-          })
+          )
         end
       end
 
@@ -68,12 +68,12 @@ describe 'postfix::define', :type => :define do
         }}
 
         it do
-          is_expected.to contain_file('define_main.cf').with({
+          is_expected.to contain_file('define_main.cf').with(
             'ensure'  => 'present',
             'content' => /THIS FILE IS MANAGED BY PUPPET/,
             'notify'  => 'Service[postfix]',
             'require' => 'Package[postfix]',
-          })
+          )
         end
       end
     end
