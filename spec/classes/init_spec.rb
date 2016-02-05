@@ -22,6 +22,9 @@ describe 'postfix', :type => :class do
             is_expected.to contain_package('postfix').with(
               'ensure' => 'present',
             )
+            is_expected.to contain_package('swaks').with(
+              'ensure' => 'present',
+            )
           end
         end
 
@@ -32,6 +35,9 @@ describe 'postfix', :type => :class do
 
           it do
             is_expected.to contain_package('postfix').with(
+              'ensure' => 'latest',
+            )
+            is_expected.to contain_package('swaks').with(
               'ensure' => 'latest',
             )
           end
@@ -46,6 +52,9 @@ describe 'postfix', :type => :class do
 
           it do
             is_expected.to contain_package('postfix').with(
+              'ensure' => 'absent',
+            )
+            is_expected.to contain_package('swaks').with(
               'ensure' => 'absent',
             )
           end
@@ -73,6 +82,9 @@ describe 'postfix', :type => :class do
 
           it do
             is_expected.to contain_package('postfix').with(
+              'ensure' => 'purged',
+            )
+            is_expected.to contain_package('swaks').with(
               'ensure' => 'purged',
             )
           end
@@ -199,6 +211,26 @@ describe 'postfix', :type => :class do
               'content' => /THIS FILE IS MANAGED BY PUPPET/,
               'notify'  => 'Service[postfix]',
               'require' => 'Package[postfix]',
+            )
+          end
+        end
+
+        context 'when recipient' do
+          let(:params) {{
+            :recipient => 'admin@debian-solutions.de',
+          }}
+
+          it do
+            is_expected.to contain_exec('postfix.newaliases').with(
+              'command'   => '/usr/bin/newaliases',
+              'subscribe' => 'Mailalias[postfix.mailalias]',
+              'require'   => 'Package[postfix]',
+            )
+          end
+          it do
+            is_expected.to contain_mailalias('postfix.mailalias').with(
+              'ensure'    => 'present',
+              'recipient' => 'admin@debian-solutions.de',
             )
           end
         end
