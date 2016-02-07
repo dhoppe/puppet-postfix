@@ -1,3 +1,21 @@
+## 2016-02-05 Release 1.1.0
+### Summary:
+- [Puppet] Add support for Puppet Enterprise
+- [Puppet] Switch to scope syntax of Puppet 3
+- [RSpec] Update rspec tests for better code coverage
+- [Puppet Forge] Add statistics for downloads, modules and releases
+- [Travis CI] Add configuration for coverage reports
+- [Rubocop] Resolve several rubocop issues
+- [Travis CI] Update matrix of tested Puppet and RVM versions
+- [Beaker] Update configuration for beaker
+- [RSpec] Update configuration for rspec
+- [Rubocop] Add configuration for rubocop
+- [RSpec] Add configuration for rspec
+- [Rake] Update list of rake tasks
+- [Gem] Update list of required gems
+- [Git] Update list of ignored files/directories
+- [Beaker] Update box/box_url because of new point release
+
 ## 2015-09-02 Release 1.0.6
 ### Summary:
 - [Fix] Forgot to merge the feature branch
