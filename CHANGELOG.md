@@ -1,3 +1,7 @@
+## 2016-02-16 Release 1.2.1
+### Summary:
+- [Travis CI] New release because of build errors
+
 ## 2016-02-16 Release 1.2.0
 ### Summary:
 - [Puppet] Add support for SMTP Authentication
