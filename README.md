@@ -294,6 +294,18 @@ Determines which email address should be used for the redirecting. Defaults to "
 
 Determines which host should be used as relayhost for outgoing emails. Defaults to "smtp.${::domain}".
 
+#### `relayport`
+
+Determines which port should be used as relayhost for outgoing emails. Defaults to '25'.
+
+#### `sasl_user`
+
+Determines which user should be used for authentication with the relayhost. Defaults to 'undef'.
+
+#### `sasl_pass`
+
+Determines which password should be used for authentication with the relayhost. Defaults to 'undef'.
+
 ## Limitations
 
 This module has been tested on:

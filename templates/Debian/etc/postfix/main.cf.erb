@@ -22,6 +22,17 @@ append_dot_mydomain = no
 
 readme_directory = no
 
+<% if scope['::postfix::sasl_user'] and scope['::postfix::sasl_pass'] -%>
+# SASL parameters
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_use_tls = yes
+smtp_tls_security_level = encrypt
+smtp_tls_note_starttls_offer = yes
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+
+<% end -%>
 # TLS parameters
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
@@ -37,7 +48,7 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 myorigin = /etc/mailname
 mydestination = <%= scope['::postfix::mydestination'] %>
-relayhost = <%= scope['::postfix::relayhost'] %>
+relayhost = [<%= scope['::postfix::relayhost'] -%>]:<%= scope['::postfix::relayport'] %>
 mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
 mailbox_command = procmail -a "$EXTENSION"
 mailbox_size_limit = 0
