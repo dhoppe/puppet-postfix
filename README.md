@@ -9,15 +9,15 @@
 #### Table of Contents
 
 1. [Overview](#overview)
-2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with postfix](#setup)
+1. [Module Description - What the module does and why it is useful](#module-description)
+1. [Setup - The basics of getting started with postfix](#setup)
     * [What postfix affects](#what-postfix-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with postfix](#beginning-with-postfix)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-6. [Limitations - OS compatibility, etc.](#limitations)
-7. [Development - Guide for contributing to the module](#development)
+1. [Usage - Configuration options and additional functionality](#usage)
+1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+1. [Limitations - OS compatibility, etc.](#limitations)
+1. [Development - Guide for contributing to the module](#development)
 
 ## Overview
 
@@ -25,7 +25,8 @@ This module installs, configures and manages the Postfix service.
 
 ## Module Description
 
-This module handles installing, configuring and running Postfix across a range of operating systems and distributions.
+This module handles installing, configuring and running Postfix across a range of
+operating systems and distributions.
 
 ## Setup
 
@@ -97,7 +98,8 @@ Deploy the configuration files from source directory.
     }
 ```
 
-Deploy the configuration files from source directory ***(Unmanaged configuration files will be removed)***.
+Deploy the configuration files from source directory ***(Unmanaged configuration
+files will be removed)***.
 
 ```puppet
     class { 'postfix':
@@ -130,7 +132,8 @@ Deploy the configuration file from template.
     }
 ```
 
-Deploy the configuration file from custom template ***(Additional parameters can be defined)***.
+Deploy the configuration file from custom template ***(Additional parameters can
+be defined)***.
 
 ```puppet
     class { 'postfix':
@@ -188,7 +191,8 @@ Disable the postfix service.
 
 #### `package_ensure`
 
-Determines if the package should be installed. Valid values are 'present', 'latest', 'absent' and 'purged'. Defaults to 'present'.
+Determines if the package should be installed. Valid values are 'present',
+'latest', 'absent' and 'purged'. Defaults to 'present'.
 
 #### `package_name`
 
@@ -200,7 +204,8 @@ Determines if additional packages should be managed. Defaults to '['swaks']'.
 
 #### `config_dir_ensure`
 
-Determines if the configuration directory should be present. Valid values are 'absent' and 'directory'. Defaults to 'directory'.
+Determines if the configuration directory should be present. Valid values are
+'absent' and 'directory'. Defaults to 'directory'.
 
 #### `config_dir_path`
 
@@ -208,11 +213,13 @@ Determines if the configuration directory should be managed. Defaults to '/etc/p
 
 #### `config_dir_purge`
 
-Determines if unmanaged configuration files should be removed. Valid values are 'true' and 'false'. Defaults to 'false'.
+Determines if unmanaged configuration files should be removed. Valid values are
+'true' and 'false'. Defaults to 'false'.
 
 #### `config_dir_recurse`
 
-Determines if the configuration directory should be recursively managed. Valid values are 'true' and 'false'. Defaults to 'true'.
+Determines if the configuration directory should be recursively managed. Valid
+values are 'true' and 'false'. Defaults to 'true'.
 
 #### `config_dir_source`
 
@@ -220,7 +227,8 @@ Determines the source of a configuration directory. Defaults to 'undef'.
 
 #### `config_file_ensure`
 
-Determines if the configuration file should be present. Valid values are 'absent' and 'present'. Defaults to 'present'.
+Determines if the configuration file should be present. Valid values are 'absent'
+and 'present'. Defaults to 'present'.
 
 #### `config_file_path`
 
@@ -252,7 +260,8 @@ Determines the content of a configuration file. Defaults to 'undef'.
 
 #### `config_file_notify`
 
-Determines if the service should be restarted after configuration changes. Defaults to 'Service[postfix]'.
+Determines if the service should be restarted after configuration changes.
+Defaults to 'Service[postfix]'.
 
 #### `config_file_require`
 
@@ -260,7 +269,8 @@ Determines which package a configuration file depends on. Defaults to 'Package[p
 
 #### `config_file_hash`
 
-Determines which configuration files should be managed via `postfix::define`. Defaults to '{}'.
+Determines which configuration files should be managed via `postfix::define`.
+Defaults to '{}'.
 
 #### `config_file_options_hash`
 
@@ -268,7 +278,8 @@ Determines which parameters should be passed to an ERB template. Defaults to '{}
 
 #### `service_ensure`
 
-Determines if the service should be running or not. Valid values are 'running' and 'stopped'. Defaults to 'running'.
+Determines if the service should be running or not. Valid values are 'running'
+and 'stopped'. Defaults to 'running'.
 
 #### `service_name`
 
@@ -276,7 +287,8 @@ Determines the name of service to manage. Defaults to 'postfix'.
 
 #### `service_enable`
 
-Determines if the service should be enabled at boot. Valid values are 'true' and 'false'. Defaults to 'true'.
+Determines if the service should be enabled at boot. Valid values are 'true'
+and 'false'. Defaults to 'true'.
 
 #### `myhostname`
 
@@ -284,7 +296,8 @@ Determines the internet domain name of this mail system. Defaults to "$::fqdn".
 
 #### `mydestination`
 
-Determines the list of domains that are delivered via the $local_transport mail delivery transport. Defaults to "${::fqdn}, localhost.${::domain}, localhost".
+Determines the list of domains that are delivered via the $local_transport mail
+delivery transport. Defaults to "${::fqdn}, localhost.${::domain}, localhost".
 
 #### `recipient`
 
@@ -292,19 +305,23 @@ Determines which email address should be used for the redirecting. Defaults to "
 
 #### `relayhost`
 
-Determines which host should be used as relayhost for outgoing emails. Defaults to "smtp.${::domain}".
+Determines which host should be used as relayhost for outgoing emails. Defaults
+to "smtp.${::domain}".
 
 #### `relayport`
 
-Determines which port should be used as relayhost for outgoing emails. Defaults to '25'.
+Determines which port should be used as relayhost for outgoing emails. Defaults
+to '25'.
 
 #### `sasl_user`
 
-Determines which user should be used for authentication with the relayhost. Defaults to 'undef'.
+Determines which user should be used for authentication with the relayhost.
+Defaults to 'undef'.
 
 #### `sasl_pass`
 
-Determines which password should be used for authentication with the relayhost. Defaults to 'undef'.
+Determines which password should be used for authentication with the relayhost.
+Defaults to 'undef'.
 
 ## Limitations
 
@@ -317,11 +334,13 @@ This module has been tested on:
 
 ### Bug Report
 
-If you find a bug, have trouble following the documentation or have a question about this module - please create an issue.
+If you find a bug, have trouble following the documentation or have a question
+about this module - please create an issue.
 
 ### Pull Request
 
-If you are able to patch the bug or add the feature yourself - please make a pull request.
+If you are able to patch the bug or add the feature yourself - please make a
+pull request.
 
 ### Contributors
 
