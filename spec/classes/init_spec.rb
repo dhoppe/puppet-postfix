@@ -1,23 +1,20 @@
 require 'spec_helper'
 
 describe 'postfix', type: :class do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily,
-        operatingsystem: 'Debian'
-      }
-    end
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    it { is_expected.to compile.with_all_deps }
-    it { is_expected.to contain_anchor('postfix::begin') }
-    it { is_expected.to contain_class('postfix::params') }
-    it { is_expected.to contain_class('postfix::install') }
-    it { is_expected.to contain_class('postfix::config') }
-    it { is_expected.to contain_class('postfix::service') }
-    it { is_expected.to contain_anchor('postfix::end') }
+      it { is_expected.to compile.with_all_deps }
+      it { is_expected.to contain_anchor('postfix::begin') }
+      it { is_expected.to contain_class('postfix::params') }
+      it { is_expected.to contain_class('postfix::install') }
+      it { is_expected.to contain_class('postfix::config') }
+      it { is_expected.to contain_class('postfix::service') }
+      it { is_expected.to contain_anchor('postfix::end') }
 
-    context "on #{osfamily}" do
       describe 'postfix::install' do
         context 'defaults' do
           it do

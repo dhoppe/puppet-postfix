@@ -1,17 +1,15 @@
 require 'spec_helper'
 
 describe 'postfix::define', type: :define do
-  ['Debian'].each do |osfamily|
-    let(:facts) do
-      {
-        osfamily: osfamily,
-        operatingsystem: 'Debian'
-      }
-    end
-    let(:pre_condition) { 'include postfix' }
-    let(:title) { 'main.cf' }
+  on_supported_os.each do |os, facts|
+    context "on #{os}" do
+      let(:facts) do
+        facts
+      end
 
-    context "on #{osfamily}" do
+      let(:pre_condition) { 'include postfix' }
+      let(:title) { 'main.cf' }
+
       context 'when source file' do
         let(:params) do
           {
