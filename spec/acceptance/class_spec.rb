@@ -8,14 +8,14 @@ when 'Debian'
   service_name     = 'postfix'
 end
 
-describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'postfix', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'postfix': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'postfix::install' do
@@ -25,7 +25,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -44,7 +44,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -65,7 +65,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
@@ -93,7 +93,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :expect_failures => true)
+        apply_manifest(pp, expect_failures: true)
       end
 
       describe package(package_name) do
@@ -119,7 +119,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -135,7 +135,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -158,7 +158,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file('/etc/mailname') do
@@ -175,7 +175,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do
@@ -192,7 +192,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do
