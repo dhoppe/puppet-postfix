@@ -1,10 +1,11 @@
 # postfix
 
 [![Build Status](https://travis-ci.org/dhoppe/puppet-postfix.png?branch=master)](https://travis-ci.org/dhoppe/puppet-postfix)
+[![Code Coverage](https://coveralls.io/repos/github/dhoppe/puppet-postfix/badge.svg?branch=master)](https://coveralls.io/github/dhoppe/puppet-postfix)
 [![Puppet Forge](https://img.shields.io/puppetforge/v/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
-[![Puppet Forge](https://img.shields.io/puppetforge/dt/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
-[![Puppet Forge](https://img.shields.io/puppetforge/mc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
-[![Puppet Forge](https://img.shields.io/puppetforge/rc/dhoppe.svg)](https://forge.puppetlabs.com/dhoppe)
+[![Puppet Forge - downloads](https://img.shields.io/puppetforge/dt/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
+[![Puppet Forge - endorsement](https://img.shields.io/puppetforge/e/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
+[![Puppet Forge - scores](https://img.shields.io/puppetforge/f/dhoppe/postfix.svg)](https://forge.puppetlabs.com/dhoppe/postfix)
 
 #### Table of Contents
 
