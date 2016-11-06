@@ -1,3 +1,11 @@
+## 2016-11-06 Release 1.4.0
+
+### Summary
+
+- [Rubocop] Fix several Rubocop issues
+- [Puppet] Add support for Ubuntu 16.04.x (Xenial Xerus)
+- [Puppet] Fix version of module puppet/extlib
+
 ## 2016-11-06 Release 1.3.1
 
 ### Summary
