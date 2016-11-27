@@ -3,19 +3,19 @@ require 'spec_helper_acceptance'
 case fact('osfamily')
 when 'Debian'
   package_name     = 'postfix'
-  config_dir_path  = '/etc/postfix'
+  package_list     = 'swaks'
   config_file_path = '/etc/postfix/main.cf'
   service_name     = 'postfix'
 end
 
-describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
+describe 'postfix', if: SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   it 'is_expected.to work with no errors' do
     pp = <<-EOS
       class { 'postfix': }
     EOS
 
-    apply_manifest(pp, :catch_failures => true)
-    apply_manifest(pp, :catch_changes => true)
+    apply_manifest(pp, catch_failures: true)
+    apply_manifest(pp, catch_changes: true)
   end
 
   describe 'postfix::install' do
@@ -25,10 +25,13 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
+        it { is_expected.to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.to be_installed }
       end
     end
@@ -41,10 +44,13 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
+        it { is_expected.to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.to be_installed }
       end
     end
@@ -59,10 +65,13 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe package(package_name) do
+        it { is_expected.not_to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.not_to be_installed }
       end
       describe file(config_file_path) do
@@ -84,10 +93,13 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :expect_failures => true)
+        apply_manifest(pp, expect_failures: true)
       end
 
       describe package(package_name) do
+        it { is_expected.not_to be_installed }
+      end
+      describe package(package_list) do
         it { is_expected.not_to be_installed }
       end
       describe file(config_file_path) do
@@ -107,7 +119,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -123,7 +135,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file(config_file_path) do
@@ -146,7 +158,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe file('/etc/mailname') do
@@ -163,7 +175,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           class { 'postfix': }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do
@@ -180,7 +192,7 @@ describe 'postfix', :if => SUPPORTED_PLATFORMS.include?(fact('osfamily')) do
           }
         EOS
 
-        apply_manifest(pp, :catch_failures => true)
+        apply_manifest(pp, catch_failures: true)
       end
 
       describe service(service_name) do

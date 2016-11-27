@@ -28,6 +28,26 @@ class postfix::config {
     }
   }
 
+  if $::postfix::sasl_user and $::postfix::sasl_pass {
+    exec { 'postfix.postmap':
+      command     => "/usr/sbin/postmap ${::postfix::config_dir_path}/sasl_passwd",
+      refreshonly => true,
+      subscribe   => File['postfix.sasl_passwd'],
+      require     => $::postfix::config_file_require,
+    }
+
+    file { 'postfix.sasl_passwd':
+      ensure  => $::postfix::config_file_ensure,
+      path    => "${::postfix::config_dir_path}/sasl_passwd",
+      owner   => $::postfix::config_file_owner,
+      group   => $::postfix::config_file_group,
+      mode    => '0600',
+      content => template('postfix/common/etc/postfix/sasl_passwd.erb'),
+      notify  => $::postfix::config_file_notify,
+      require => $::postfix::config_file_require,
+    }
+  }
+
   if $::postfix::recipient {
     exec { 'postfix.newaliases':
       command     => '/usr/bin/newaliases',

@@ -32,6 +32,9 @@ class postfix (
   $mydestination            = "${::fqdn}, localhost.${::domain}, localhost",
   $recipient                = "admin@${::domain}",
   $relayhost                = "smtp.${::domain}",
+  $relayport                = 25,
+  $sasl_user                = undef,
+  $sasl_pass                = undef,
 ) inherits ::postfix::params {
   validate_re($package_ensure, '^(absent|latest|present|purged)$')
   validate_string($package_name)

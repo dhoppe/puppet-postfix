@@ -1,6 +1,6 @@
 {
   "name": "dhoppe-postfix",
-  "version": "1.0.6",
+  "version": "1.4.0",
   "author": "Dennis Hoppe",
   "summary": "This module installs, configures and manages the Postfix service.",
   "license": "Apache-2.0",
@@ -8,6 +8,10 @@
   "project_page": "https://github.com/dhoppe/puppet-postfix",
   "issues_url": "https://github.com/dhoppe/puppet-postfix/issues",
   "dependencies": [
+    {
+      "name": "puppet/extlib",
+      "version_requirement": ">= 1.0.0 < 2.0.0"
+    },
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.5.0 < 5.0.0"
@@ -26,7 +30,8 @@
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "12.04",
-        "14.04"
+        "14.04",
+        "16.04"
       ]
     },
     {
@@ -35,13 +40,15 @@
   ],
   "requirements": [
     {
+      "name": "pe",
+      "version_requirement": ">= 3.2.0"
+    },
+    {
       "name": "puppet",
-      "version_requirement": "3.x"
+      "version_requirement": ">= 3.2.0"
     }
   ],
   "tags": [
-    "postfix",
-    "debian",
-    "ubuntu"
+    "postfix"
   ]
 }
