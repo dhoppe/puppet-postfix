@@ -36,6 +36,9 @@
     },
     {
       "operatingsystem": "Gentoo",
+      "operatingsystemrelease": [
+         "2.2"
+      ]
     }
   ],
   "requirements": [
