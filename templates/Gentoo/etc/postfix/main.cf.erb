@@ -670,3 +670,12 @@ sample_directory =
 #
 readme_directory =
 inet_protocols = ipv4
+
+<% if scope['::postfix::sasl_user'] and scope['::postfix::sasl_pass'] -%>
+# SASL parameters
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_use_tls = no
+
+<% end -%>
