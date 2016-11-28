@@ -66,7 +66,6 @@
 - [Gem] Update list of required gems
 - [Git] Update list of ignored files/directories
 - [Beaker] Update box/box_url because of new point release
->>>>>>> 6da429d9b2ef8f4dd5ca813cb49efebe659bebfe
 
 ## 2015-09-02 Release 1.0.6
 
