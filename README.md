@@ -331,6 +331,7 @@ This module has been tested on:
 
 * Debian 6/7/8
 * Ubuntu 12.04/14.04/16.04
+* Gentoo Base System release 2.2
 
 ## Development
 

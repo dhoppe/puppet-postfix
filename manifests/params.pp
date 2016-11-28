@@ -44,6 +44,8 @@ class postfix::params {
   case $::osfamily {
     'Debian': {
     }
+    'Gentoo': {
+    }
     default: {
       fail("${::operatingsystem} not supported.")
     }

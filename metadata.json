@@ -33,6 +33,12 @@
         "14.04",
         "16.04"
       ]
+    },
+    {
+      "operatingsystem": "Gentoo",
+      "operatingsystemrelease": [
+         "2.2"
+      ]
     }
   ],
   "requirements": [

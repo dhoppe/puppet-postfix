@@ -1,3 +1,9 @@
+## 2016-11-27 Release 1.4.1
+
+### Summary:
+
+- [Puppet] Add support for Gentoo
+
 ## 2016-11-06 Release 1.4.0
 
 ### Summary
