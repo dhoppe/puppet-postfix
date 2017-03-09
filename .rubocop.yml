@@ -44,7 +44,7 @@ Lint/EndAlignment:
 Lint/EnsureReturn:
   Enabled: True
 
-Lint/Eval:
+Security/Eval:
   Enabled: True
 
 Lint/HandleExceptions:
@@ -141,6 +141,9 @@ RSpec/ExampleLength:
 
 RSpec/NamedSubject:
   Enabled: False
+
+RSpec/NestedGroups:
+  Max: 4
 
 # Style
 Style/AccessModifierIndentation:
@@ -297,7 +300,7 @@ Style/LeadingCommentSpace:
 Style/LineEndConcatenation:
   Enabled: True
 
-Style/MethodCallParentheses:
+Style/MethodCallWithoutArgsParentheses:
   Enabled: True
 
 Style/MethodDefParentheses:
