@@ -45,6 +45,8 @@ class postfix::params {
     'Debian': {
     }
     'Gentoo': {
+    },
+    'Suse': {
     }
     default: {
       fail("${::operatingsystem} not supported.")
