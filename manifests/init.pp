@@ -31,7 +31,7 @@ class postfix (
   $myhostname               = $::fqdn,
   $mydestination            = "${::fqdn}, localhost.${::domain}, localhost",
   $recipient                = "admin@${::domain}",
-  $relayhost                = "smtp.${::domain}",
+  $relayhost                = undef,
   $relayport                = 25,
   $sasl_user                = undef,
   $sasl_pass                = undef,
