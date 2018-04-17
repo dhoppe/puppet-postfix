@@ -307,8 +307,8 @@ Determines which email address should be used for the redirecting. Defaults to "
 
 #### `relayhost`
 
-Determines which host should be used as relayhost for outgoing emails. Defaults
-to "smtp.${::domain}".
+Determines which host should be used as relayhost for outgoing emails. By default
+no relay host is set and e-mail is transmitted directly.
 
 #### `relayport`
 
